@@ -1,24 +1,49 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <nav>
+      <li>Style 1
+        <ul className='drop-menu menu-1'> 
+        <li>one</li>
+        <li>two</li>
+        <li>tree</li>
+        <li>four</li>
+        <li>five</li>
+        <li>six</li>
+        </ul>
+      </li>
+      <li>Style 2
+        <ul className='drop-menu menu-2'> 
+        <li>one</li>
+        <li>two</li>
+        <li>tree</li>
+        <li>four</li>
+        <li>five</li>
+        <li>six</li>
+        </ul>
+      </li>
+      <li>Style 3
+        <ul className='drop-menu menu-3'> 
+        <li>one</li>
+        <li>two</li>
+        <li>tree</li>
+        <li>four</li>
+        <li>five</li>
+        <li>six</li>
+        </ul>
+      </li>
+      <li>Style 4
+        <ul className='drop-menu menu-4'> 
+        <li>one</li>
+        <li>two</li>
+        <li>tree</li>
+        <li>four</li>
+        <li>five</li>
+        <li>six</li>
+        </ul>
+      </li>
+    </nav>
   );
 }
 
