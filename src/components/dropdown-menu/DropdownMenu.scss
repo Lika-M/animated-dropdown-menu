@@ -3,7 +3,6 @@ nav {
     text-align: center;
 
     >ul {
-        list-style: none;
         padding: 0;
         margin: 0;
         display: inline-block;
@@ -39,7 +38,7 @@ ul.drop-menu {
     padding: 0;
 
     li {
-        background-color: rgb(166, 199, 199);
+        background-color: rgb(100, 188, 188);
         color: rgba(255, 255, 255, 0.7);
         border-bottom: 1px solid rgba(255, 255, 255, 0.7);
 
