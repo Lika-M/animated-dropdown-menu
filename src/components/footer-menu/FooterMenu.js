@@ -13,11 +13,11 @@ import './FooterMenu.scss';
 
 export const FooterMenu = () => {
 
-    const [active, setActive] = useState('0')
+    const [active, setActive] = useState('0');
 
     const handleClick = (e) => {
-       setActive(e.target.dataset.index)
-    }
+        setActive(e.target.dataset.index)
+     }
 
     return (
         <>
