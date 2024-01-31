@@ -16,14 +16,28 @@ export const FooterMenu = () => {
     const [active, setActive] = useState('0');
 
     const handleClick = (e) => {
-        setActive(e.target.dataset.index)
-     }
+        setActive(e.target.dataset.index);
+    }
+
+    const handleClickAlert = (e) => {
+        if (active !== '4') {
+            setActive(e.target.dataset.index);
+        } else {
+            setActive('0');
+        }
+    }
+
+    const handleClickModal = (e) => {
+        setActive(e.target.dataset.index);
+        console.log(active)
+        setTimeout(() => setActive('0'), 5000);
+    }
 
     return (
         <>
             {/* Section 1 - Notification */}
             <section className="section-notification">
-                <ul className="nav" onClick={ handleClick}>
+                <ul className="nav" onClick={handleClick}>
                     <li className={active === '0' ? "active" : ""} data-index={'0'}><HomeIcon /></li>
                     <li className={active === '1' ? "active" : ""} data-index={'1'}><SearchIcon /></li>
                     <li className={active === '2' ? "active" : ""} data-index={'2'}><StarBorderIcon />
@@ -45,39 +59,41 @@ export const FooterMenu = () => {
                             <hr />
                         </div>
                     </div>
-                    <div className="grid">
-                        <div className="item"></div>
-                        <div className="item"></div>
-                        <div className="item"></div>
-                        <div className="item"></div>
-                        <div className="item"></div>
-                        <div className="item"></div>
-                        <div className="item"></div>
-                        <div className="item"></div>
-                        <div className="item"></div>
-                        <div className="item"></div>
-                        <div className="item"></div>
-                        <div className="item"></div>
-                        <div className="item"></div>
-                        <div className="item"></div>
-                        <div className="item"></div>
-                        <div className="item"></div>
+                    <div className="grid" onClick={handleClickAlert}>
+                        <div className="item" data-index={'4'}></div>
+                        <div className="item" data-index={'4'}></div>
+                        <div className="item" data-index={'4'}></div>
+                        <div className="item" data-index={'4'}></div>
+                        <div className="item" data-index={'4'}></div>
+                        <div className="item" data-index={'4'}></div>
+                        <div className="item" data-index={'4'}></div>
+                        <div className="item" data-index={'4'}></div>
+                        <div className="item" data-index={'4'}></div>
+                        <div className="item" data-index={'4'}></div>
+                        <div className="item" data-index={'4'}></div>
+                        <div className="item" data-index={'4'}></div>
+                        <div className="item" data-index={'4'}></div>
+                        <div className="item" data-index={'4'}></div>
+                        <div className="item" data-index={'4'}></div>
+                        <div className="item" data-index={'4'}></div>
                     </div>
-                    <div className="alert-element">
+                    {/* <div className="alert-element"> */}
+                    <div className={active === '4' ? "alert-element active" : "alert-element"}>
                         <div className="icon"><NotificationsIcon /></div>
-                        <div className="text"><span>You clicked a Murray!!</span></div>
+                        <div className="text"><span>You clicked here!</span></div>
                     </div>
                 </div>
             </section>
             {/* Section 3 - Modal */}
             <section className="section-modal">
-                <div className="profile"><img src="" alt="img" />
-                    <div className="text">
-                        <div className="name">Bill Murray</div>
-                        <div className="meta">Click me!</div>
+                <div className="profile" onClick={handleClickModal} data-index={'5'}>
+                    <img src="" alt="img" data-index={'5'}/>
+                    <div className="text" data-index={'5'}>
+                        <div className="name" data-index={'5'}>Bill Murray</div>
+                        <div className="meta" data-index={'5'}>Click me!</div>
                     </div>
                 </div>
-                <div className="overlay">
+                <div className={active === '5' ? "overlay active" : "overlay"}>
                     <div className="modal">
                         <div className="title">You clicked a Murray!</div>
                         <div className="body">

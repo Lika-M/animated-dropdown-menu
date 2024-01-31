@@ -8,7 +8,7 @@
 
     .nav {
         display: flex;
-        background: #625656;
+        background: #7c7a7a;
         color: white;
         border-radius: 4px;
         box-shadow: 0px 23px 30px -20px rgba(0, 0, 0, 0.4);
@@ -25,7 +25,7 @@
         color: rgba(255, 255, 255, 0.6);
         position: relative;
         cursor: pointer;
-       
+
         transition: all 200ms ease-in-out;
         perspective: 1000px;
 
@@ -40,18 +40,20 @@
 
             .notifications {
                 display: flex;
-                animation: note 800ms ease-in-out forwards;
-                transform-origin: center 60px;
+                animation: note 0.8s ease-in-out forwards;
+                transform-origin: center bottom;
+                // transform-origin: center 60px;
 
                 li {
                     display: flex;
-                    padding:3px 10px;
-                    
+                    padding: 3px 10px;
+
                     svg {
                         margin-right: 8px;
                     }
+
                     span {
-                       margin: auto;
+                        margin: auto;
                     }
                 }
             }
@@ -59,11 +61,11 @@
             @keyframes note {
                 0% {
                     opacity: 0;
-                    transform: scale(0.1) rotate(30deg) translateY(50px) rotateX(90deg);
+                    transform: scale(0.1) rotate(50deg) rotateX(90deg);
                 }
 
                 50% {
-                    transform: rotate(-10deg) rotateX(-2deg);
+                    transform: rotate(-10deg) rotateX(-20deg);
                     opacity: 1;
                 }
 
@@ -79,7 +81,7 @@
     }
 
     .notifications {
-        background:rgb(100, 188, 188);
+        background: rgb(100, 188, 188);
         display: none;
         border-radius: 4px;
         position: absolute;
@@ -97,7 +99,7 @@
             content: "";
             border: solid transparent;
             pointer-events: none;
-            border-top-color:rgb(100, 188, 188);
+            border-top-color: rgb(100, 188, 188);
             border-width: 16px;
 
             li {
@@ -129,11 +131,12 @@
         //align-items: flex-start
         background: white;
         width: 600px;
+        height: 560px;
+        overflow: hidden;
         margin: 0 auto;
         box-shadow: 0px 23px 40px -20px rgba(0, 0, 0, 0.4);
-        overflow: hidden;
         position: relative;
-        perspective: 1000px;
+        // perspective: 1000px;
     }
 
     .title {
@@ -153,7 +156,6 @@
         }
 
         hr {
-
             border: none;
             border-top: 1px solid #ccc;
         }
@@ -204,7 +206,6 @@
     }
 
     .alert-element {
-
         position: absolute;
         bottom: 30px;
         left: 30px;
@@ -218,52 +219,51 @@
         opacity: 0;
         transform-origin: bottom left;
         transform: rotate(90deg) scale(0.5) translate(100px, -300px) rotateX(90deg);
-        transition: all 450ms cubic-bezier(0, 0.6, 0.35, 1.4);
-    }
+        transition: all 650ms cubic-bezier(0, 0.6, 0.35, 1.4);
 
-    .icon {
-        padding: 20px;
-        background:rgb(100, 188, 188);
-        color: white;
-        border-radius: 4px 0px 0px 4px;
-        overflow: hidden;
+        .icon {
+            padding: 20px;
+            background: rgb(100, 188, 188);
+            color: white;
+            border-radius: 4px 0px 0px 4px;
+            overflow: hidden;
 
-        svg {
-            transform: scale(0.2) translateY(50px);
-
-            opacity: 0;
-            transition: all 400ms cubic-bezier(0, 0.6, 0.35, 1.4) 600ms;
+            svg {
+                transform: scale(0.2) translateY(50px);
+                opacity: 0;
+                transition: all 400ms cubic-bezier(0, 0.6, 0.35, 1.4) 400ms;
+            }
         }
-    }
 
-    .text {
-        background: rgba(0, 0, 0, 0.8);
-        padding: 0 20px;
-        display: flex;
-        align-items: center;
-        border-radius: 0px 4px 4px 0px;
-        transform: rotateY(90deg);
-        transition: all 500ms ease-in-out 1000ms;
-        transform-origin: center left;
-        opacity: 0;
+        .text {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            border-radius: 0px 4px 4px 0px;
+            transform: rotateY(90deg);
+            transition: transform 500ms ease-in-out 800ms;
+            transform-origin: center left;
+            perspective: 1000;
+            opacity: 0;
+        }
 
         &.active {
             opacity: 1;
             transform: rotate(0deg) scale(1);
-        }
 
-        i {
-            transform: scale(1) translateY(0px);
-            opacity: 1;
-        }
+            svg {
+                transform: scale(1) translateY(0px);
+                opacity: 1;
+            }
 
-        .text {
-            transform: rotateY(0deg);
-            opacity: 1;
+            .text {
+                transform: rotateY(0deg);
+                opacity: 1;
+            }
         }
     }
 }
-
 
 
 // Section - 3 - Modal
@@ -286,6 +286,9 @@
             transform: translateY(-4px);
             box-shadow: 0px 27px 30px -20px rgba(0, 0, 0, 0.4);
         }
+        .text {
+            pointer-events:stroke;
+        }
 
         .name {
             font-size: 24px;
@@ -293,7 +296,6 @@
         }
 
         .meta {
-
             color: rgba(0, 0, 0, 0.4);
         }
 
@@ -312,7 +314,7 @@
         right: 0;
         bottom: 0;
         background: rgba(0, 0, 0, 0.7);
-        display: flex;
+        // display: flex;
         justify-content: center;
         align-items: center;
         display: none;
@@ -324,7 +326,7 @@
 
             .title {
 
-                background:rgb(100, 188, 188);
+                background: rgb(100, 188, 188);
                 color: white;
                 border-radius: 4px 4px 0px 0px;
                 text-align: center;
@@ -365,7 +367,6 @@
             animation: overlayAnim 5s ease-in-out forwards;
 
             .modal {
-
                 animation: modalAnim 5s ease-in-out forwards;
             }
         }
@@ -373,29 +374,14 @@
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 @keyframes overlayAnim {
-
     0%,
     100% {
-
         background-color: rgba(0, 0, 0, 0);
     }
 
     15%,
     85% {
-
         background-color: rgba(0, 0, 0, 0.3);
     }
 
